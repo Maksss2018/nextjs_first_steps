@@ -1,3 +1,3 @@
-export default function ClientId({ params }) {
-  return <h1>Clinet by id page {params.ClientId} </h1>;
+export default function Main() {
+  return <h1>Main page </h1>;
 }
