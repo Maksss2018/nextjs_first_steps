@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "First steps",
-  description: "making first steps in the NextJS",
+  title: "Get Client by id",
+  description: "getting client by id in the url",
 };
 
 export default function RootLayout({ children }) {
