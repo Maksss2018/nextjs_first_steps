@@ -23,13 +23,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <div className={styles.page}>
+        <header>
           <nav>
             <Link href={"/"}>Main page</Link>
-            <br />
             <Link href={"/client"}>Client page</Link>
-            <br />
           </nav>
+        </header>
+        <div className={styles.page}>
           <main className={styles.main}>{children}</main>
           <footer className={styles.footer}>
             <a

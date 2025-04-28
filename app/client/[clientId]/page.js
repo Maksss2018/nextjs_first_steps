@@ -1,3 +1,20 @@
-export default function ClientId({ params }) {
-  return <h1>Client "by id" page (id: {params.clientId})</h1>;
+async function getUserByID(userID) {
+  return fetch("https://jsonplaceholder.typicode.com/users/" + userID).then(
+    (response) => response.json()
+  );
+}
+
+export default async function ClientId({ params }) {
+  const userData = await getUserByID(params.clientId);
+  return (
+    <>
+      <h1>
+        {" "}
+        {userData.name} - <strong>{userData.username}</strong>
+      </h1>
+      <h2>{userData.email}</h2>
+      <h2>{userData.website}</h2>
+      <h2>{userData.phone}</h2>
+    </>
+  );
 }
