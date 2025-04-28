@@ -4,7 +4,8 @@ async function getUserByID(userID) {
   );
 }
 
-export default async function ClientId({ params }) {
+export default async function ClientId(props) {
+  const params = await props.params;
   const userData = await getUserByID(params.clientId);
   return (
     <>

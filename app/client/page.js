@@ -1,8 +1,9 @@
 import Link from "next/link";
 async function fetchUsers() {
-  return fetch("https://jsonplaceholder.typicode.com/users").then((response) =>
-    response.json()
+  const result = await fetch("http://localhost:3000/api/data").then(
+    (response) => response.json()
   );
+  return result;
 }
 export default async function Client() {
   const users = await fetchUsers();
