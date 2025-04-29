@@ -4,6 +4,15 @@ async function getUserByID(userID) {
   );
 }
 
+export async function generateMetadata({ params, searchParams }) {
+  const prms = await params;
+  const user = await getUserByID(prms.clientId);
+  return {
+    title: `${user.name} - ${user.username}`,
+    description: "some description",
+  };
+}
+
 export default async function ClientId(props) {
   const params = await props.params;
   const userData = await getUserByID(params.clientId);
